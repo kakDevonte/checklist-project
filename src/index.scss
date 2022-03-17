@@ -1,0 +1,9 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+
+$custom-colors: (
+        "custom-color": $blue-700
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
