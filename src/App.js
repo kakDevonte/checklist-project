@@ -15,6 +15,8 @@ import {CreateEditUser} from './components/AdminPage/CreateEditUser'
 import {UsersWrapper} from './components/AdminPage/UsersWrapper'
 import {UserViewListWrapper} from './components/UserPage/UserViewListWrapper'
 import {FormToFill} from './components/UserPage/FormToFill'
+import {HeadViewListWrapper} from './components/HeadPage/HeadViewListWrapper'
+import {CheckForm} from './components/HeadPage/CheckForm'
 
 function App() {
 
@@ -37,7 +39,10 @@ function App() {
                         <Route path="editor/*" element={<CreateEditUser/>}/>
                     </Route>
                 </Route>
-                <Route path="/head" element={<HeadWrapper/>}/>
+                <Route path="/head" element={<HeadWrapper/>}>
+                    <Route index element={<HeadViewListWrapper/>}/>
+                    <Route path="form/*" element={<CheckForm/>}/>
+                </Route>
                 <Route path="/user" element={<UserWrapper/>}>
                     <Route index element={<UserViewListWrapper/>}/>
                     <Route path="form/*" element={<FormToFill/>}/>
